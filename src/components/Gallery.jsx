@@ -1,15 +1,15 @@
-// File: src/components/Gallery.jsx
 import React from 'react';
 import ImageCard from './ImageCard';
 
-export default function Gallery({ items, onImageClick }) {
+export default function Gallery({ items, layout, onImageClick }) {
   return (
     <section className="gallery">
       {items.map((item, i) => (
         <ImageCard
           key={i}
           image={item}
-          onClick={() => onImageClick(item)}
+          spanClass={layout[i]}
+          onClick={() => onImageClick(i)}
         />
       ))}
     </section>

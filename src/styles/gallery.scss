@@ -16,7 +16,7 @@ $overlay-bg: rgba(0, 0, 0, 0.6);
 
 .header {
     background: transparent;
-    padding: 24px;
+    padding: 10px;
     text-align: center;
     h1 {
         margin: 0;
@@ -123,7 +123,8 @@ $overlay-bg: rgba(0, 0, 0, 0.6);
     top: 10px;
     right: 12px;
     background: none;
-    border: none;
+    border: 2px solid #fff;
+    border-radius: 9px;
     font-size: 24px;
     cursor: pointer;
 }
@@ -137,5 +138,86 @@ $overlay-bg: rgba(0, 0, 0, 0.6);
     p {
         margin: 0;
         color: $text-secondary;
+    }
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    font-size: 32px;
+    color: #fff;
+    width: 40px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav.prev {
+    left: 10px;
+}
+.nav.next {
+    right: 10px;
+}
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+    margin-top: 40px;
+}
+.video-card {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+    background: $card-bg;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+    video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+// Мобильная адаптация видео
+@media (max-width: 800px) {
+    .video-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+.letter-block {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    background: #fff8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    h2 {
+        font-size: 1.75rem;
+        margin: 0;
+        margin-bottom: 1rem;
+        color: #b65f3d;
+        text-align: center;
+    }
+
+    p {
+        margin-bottom: 1rem;
     }
 }
